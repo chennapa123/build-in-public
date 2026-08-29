@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "buildinpublic"
+version = "0.1.0"
+description = "Automated Content Creator for Build in Public updates"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "typer[all]>=0.9.0",
+    "rich>=13.0.0",
+    "gitpython>=3.1.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "google-genai>=0.1.0"
+]
+
+[project.scripts]
+buildinpublic = "buildinpublic.cli:main"
+
+
+[tool.setuptools.packages.find]
+where = ["."]
