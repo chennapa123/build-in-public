@@ -19,7 +19,7 @@ class SocialMediaPosts(BaseModel):
 class ContentGenerator:
     def __init__(self, api_key: Optional[str] = None, model_name: Optional[str] = None):
         config = get_config()
-        self.api_key = api_key or config.gemini_api_key
+        self.api_key = api_key if api_key is not None else config.gemini_api_key
         self.model_name = model_name or config.gemini_model
         self.client: Optional[genai.Client] = None
         self._initialize_client()
